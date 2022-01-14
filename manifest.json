@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "ShopList",
+    "version": "1.0",
+    "description": "a shopping list that pulls items from different websites into one central platform",
+    "content_scripts": [
+        {
+          "matches": ["https://www.google.com/*"],
+          "js": ["./main.js"]
+        },
+        {
+          "matches": ["https://www.amazon.com/*"],
+          "js": ["./amazon.js"]
+        }
+      ],
+   "background": {
+    "scripts": [
+       "background.js"
+    ],
+    "persistent": false
+     },
+    "browser_action": {
+        "default_icon": "icon.jpg",
+        "popup": "hello.html"
+    },
+    "permissions": [
+        "storage"
+    ]
+  }
